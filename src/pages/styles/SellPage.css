@@ -1,55 +1,91 @@
+/* SellPage.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
 .sell-container {
-    max-width: 800px;
-    margin: 50px auto;
-    text-align: center;
-  }
-  
-  .sell-container h2 {
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .sell-container p {
-    margin-bottom: 20px;
-    color: #555;
-    line-height: 1.6;
-  }
-  
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.sell-header {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.sell-description {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.step {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.step-icon {
+  font-size: 2.5rem;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.step h3 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.step p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.step:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+}
+
+.sell-button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 40px;
+}
+
+.sell-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .steps {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .step {
-    border: 1px solid #ddd;
-    padding: 20px;
-    width: 200px;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-  }
-  
-  .step h3 {
-    margin-bottom: 10px;
-    color: #1e90ff;
-  }
-  
-  .step p {
-    color: #555;
-  }
-  
-  .sell-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #1e90ff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .sell-button:hover {
-    background-color: #1c86ee;
-  }
-  
+}

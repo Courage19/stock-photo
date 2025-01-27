@@ -8,6 +8,7 @@ const HomePage = () => {
   const [photos, setPhotos] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [category, setCategory] = useState('all');
+  const [loading, setLoading] = useState(false); // Add loading state
   const [categories, setCategories] = useState([
     { name: 'Nature', icon: <FaTree /> },
     { name: 'Technology', icon: <FaDesktop /> },
@@ -19,15 +20,19 @@ const HomePage = () => {
   ]);
 
   useEffect(() => {
-    axios.get(`/api/trending?category=${category}`) // Fetch photos based on category
+    setLoading(true); // Start loading
+    axios.get(`/api/trending?category=${category}`)
       .then((response) => setPhotos(response.data))
-      .catch((error) => console.error(error));
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false)); // Stop loading
   }, [category]);
 
   const handleSearch = () => {
+    setLoading(true); // Start loading
     axios.get(`/api/search?query=${searchTerm}`)
       .then((response) => setPhotos(response.data))
-      .catch((error) => console.error(error));
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false)); // Stop loading
   };
 
   return (
@@ -65,7 +70,13 @@ const HomePage = () => {
 
       <section className="photo-gallery">
         <h2>Trending Images</h2>
-        <PhotoGrid photos={photos} />
+        {loading ? (
+          <p>Loading trending images...</p> // Placeholder for loading state
+        ) : photos.length > 0 ? (
+          <PhotoGrid photos={photos} /> // Display photos when available
+        ) : (
+          <p>No trending images available. Please try again later.</p> // Placeholder for no images
+        )}
       </section>
 
       <footer className="footer">

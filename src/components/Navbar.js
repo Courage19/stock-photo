@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaUser, FaCamera, FaDollarSign, FaSearch } from 'react-icons/fa';
+import { FaHome, FaUser, FaCamera, FaDollarSign, FaSearch } from 'react-icons/fa'; // Added FaHome icon
 import './styles/Navbar.css';
 
 const Navbar = () => {
@@ -13,10 +13,11 @@ const Navbar = () => {
       </div>
       <ul className="nav-links">
         <li>
-          <Link to="/explore">
-            <FaSearch /> Explore
+          <Link to="/">
+            <FaHome /> Home
           </Link>
         </li>
+    
         <li>
           <Link to="/pricing">
             <FaDollarSign /> Pricing

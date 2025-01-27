@@ -1,39 +1,40 @@
 import React from 'react';
+import { FaCheckCircle } from 'react-icons/fa';
 import './styles/PricingPage.css';
 
 const PricingPage = () => {
   return (
     <div className="pricing-container">
-      <h2>Pricing Plans</h2>
+      <h2 className="pricing-header">Pricing Plans</h2>
       <div className="pricing-cards">
         <div className="pricing-card">
           <h3>Basic</h3>
-          <p>Free</p>
+          <p className="price">Free</p>
           <ul>
-            <li>Access to 100 photos</li>
-            <li>Standard License</li>
+            <li><FaCheckCircle /> Access to 100 photos</li>
+            <li><FaCheckCircle /> Standard License</li>
           </ul>
-          <button>Get Started</button>
+          <button className="get-started-btn">Get Started</button>
         </div>
-        <div className="pricing-card">
+        <div className="pricing-card premium">
           <h3>Premium</h3>
-          <p>$29/month</p>
+          <p className="price">$29/month</p>
           <ul>
-            <li>Unlimited Downloads</li>
-            <li>Premium License</li>
-            <li>Access to exclusive content</li>
+            <li><FaCheckCircle /> Unlimited Downloads</li>
+            <li><FaCheckCircle /> Premium License</li>
+            <li><FaCheckCircle /> Access to exclusive content</li>
           </ul>
-          <button>Subscribe</button>
+          <button className="subscribe-btn">Subscribe</button>
         </div>
         <div className="pricing-card">
           <h3>Enterprise</h3>
-          <p>Contact us</p>
+          <p className="price">Contact us</p>
           <ul>
-            <li>Custom solutions</li>
-            <li>Team access</li>
-            <li>Dedicated support</li>
+            <li><FaCheckCircle /> Custom solutions</li>
+            <li><FaCheckCircle /> Team access</li>
+            <li><FaCheckCircle /> Dedicated support</li>
           </ul>
-          <button>Contact Sales</button>
+          <button className="contact-sales-btn">Contact Sales</button>
         </div>
       </div>
     </div>

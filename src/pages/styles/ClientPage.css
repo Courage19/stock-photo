@@ -1,0 +1,198 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #343a40;
+  }
+  
+  .client-dashboard {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* Header Section */
+  .client-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .client-header h1 {
+    font-size: 2.5rem;
+    color: #007bff;
+  }
+  
+  .client-header p {
+    font-size: 1.2rem;
+    color: #6c757d;
+    margin-top: 0.5rem;
+  }
+  
+  /* Quick Actions Section */
+  .quick-actions {
+    margin-bottom: 3rem;
+  }
+  
+  .quick-actions h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #343a40;
+  }
+  
+  .action-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .action-card {
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    text-align: center;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .action-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .action-icon {
+    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+  }
+  
+  .action-card h3 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+  }
+  
+  .action-card p {
+    font-size: 1rem;
+    color: #6c757d;
+    margin: 0.5rem 0 1rem;
+  }
+  
+  .action-card button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .action-card button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Favorites Section */
+  .favorites-section {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .favorites-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .favorites-section button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .favorites-section button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Account Section */
+  .account-section {
+    margin-bottom: 3rem;
+  }
+  
+  .account-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #343a40;
+  }
+  
+  .account-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .account-card {
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    text-align: center;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .account-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .account-icon {
+    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+  }
+  
+  .account-card h3 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+  }
+  
+  .account-card p {
+    font-size: 1rem;
+    color: #6c757d;
+    margin: 0.5rem 0 1rem;
+  }
+  
+  .account-card button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .account-card button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .client-dashboard {
+      padding: 1rem;
+    }
+  
+    .action-cards,
+    .account-options {
+      grid-template-columns: 1fr;
+    }
+  }
+  

@@ -156,4 +156,77 @@ body {
       width: 80%;
     }
   }
+ /* General Layout */
+.placeholder-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Card Styling */
+  .placeholder-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    animation: shimmer 1.5s infinite;
+    transition: transform 0.3s ease;
+  }
+  
+  .placeholder-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Placeholder Image */
+  .placeholder-image {
+    height: 150px;
+    background: linear-gradient(90deg, #f3f3f3 25%, #ececec 50%, #f3f3f3 75%);
+    background-size: 200% 100%;
+  }
+  
+  /* Placeholder Details */
+  .placeholder-details {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .placeholder-title {
+    width: 80%;
+    height: 20px;
+    margin: 10px auto;
+    background: linear-gradient(90deg, #ececec 25%, #f3f3f3 50%, #ececec 75%);
+    background-size: 200% 100%;
+    border-radius: 4px;
+  }
+  
+  /* Metrics Section */
+  .placeholder-metrics {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+  
+  .placeholder-metric {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #777;
+    font-size: 0.9rem;
+  }
+  
+  .placeholder-icon {
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  /* Shimmer Animation */
+  @keyframes shimmer {
+    0% {
+      background-position: -200px 0;
+    }
+    100% {
+      background-position: 200px 0;
+    }
+  }
   
