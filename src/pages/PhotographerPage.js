@@ -1,50 +1,70 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
-import { FaUpload, FaWallet, FaFolderOpen } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+import { FaUpload, FaWallet, FaFolderOpen, FaHome } from 'react-icons/fa';
 import './styles/PhotographerPage.css';
 
 const PhotographerPage = () => {
-  const navigate = useNavigate(); // Initialize the navigate function
+  const navigate = useNavigate();
 
-  // Handlers for navigation
-  const handleUpload = () => navigate('/upload-photos');
-  const handleEarnings = () => navigate('/view-earnings');
-  const handleCollections = () => navigate('/manage-collections');
+  // Navigation handlers
+  const handleNavigate = (path) => navigate(path);
 
   return (
     <div className="photographer-dashboard">
-      {/* Header Section */}
-      <header className="photographer-header">
-        <h1>Welcome!</h1>
-        <p>
-          Showcase your talent, upload stunning content, and monitor your success. Empower your creative journey with us!
-        </p>
-      </header>
+      {/* Fixed Drawer */}
+      <aside className="drawer">
+        <h2>Dashboard</h2>
+        <ul>
+          <li onClick={() => handleNavigate('/')}>
+            <FaHome /> Home
+          </li>
+          <li onClick={() => handleNavigate('/upload-photos')}>
+            <FaUpload /> Upload Photos
+          </li>
+          <li onClick={() => handleNavigate('/view-earnings')}>
+            <FaWallet /> View Earnings
+          </li>
+          <li onClick={() => handleNavigate('/manage-collections')}>
+            <FaFolderOpen /> Manage Collections
+          </li>
+        </ul>
+      </aside>
 
-      {/* Quick Actions Section */}
-      <section className="photographer-actions">
-        <h2>Quick Actions</h2>
-        <div className="action-cards">
-          <div className="action-card">
-            <FaUpload className="action-icon" />
-            <h3>Upload Photos</h3>
-            <p>Share your best work with the world and build your portfolio.</p>
-            <button onClick={handleUpload}>Upload Now</button>
+      {/* Main Content */}
+      <main className="main-content">
+        {/* Header Section */}
+        <header className="photographer-header">
+          <h1>Welcome, Photographer!</h1>
+          <p>
+            Showcase your creativity, manage your collections, and monitor your success in one place.
+          </p>
+        </header>
+
+        {/* Quick Actions Section */}
+        <section className="photographer-actions">
+          <h2>Quick Actions</h2>
+          <div className="action-cards">
+            <div className="action-card" onClick={() => handleNavigate('/upload-photos')}>
+              <FaUpload className="action-icon" />
+              <h3>Upload Photos</h3>
+              <p>Share your best work with the world and grow your portfolio.</p>
+              <button>Upload Now</button>
+            </div>
+            <div className="action-card" onClick={() => handleNavigate('/view-earnings')}>
+              <FaWallet className="action-icon" />
+              <h3>View Earnings</h3>
+              <p>Track your sales and monitor your earnings in real time.</p>
+              <button>View Earnings</button>
+            </div>
+            <div className="action-card" onClick={() => handleNavigate('/manage-collections')}>
+              <FaFolderOpen className="action-icon" />
+              <h3>Manage Collections</h3>
+              <p>Organize your content into categories and collections effortlessly.</p>
+              <button>Manage Now</button>
+            </div>
           </div>
-          <div className="action-card">
-            <FaWallet className="action-icon" />
-            <h3>View Earnings</h3>
-            <p>Track your sales and earnings in real-time.</p>
-            <button onClick={handleEarnings}>View Earnings</button>
-          </div>
-          <div className="action-card">
-            <FaFolderOpen className="action-icon" />
-            <h3>Manage Collections</h3>
-            <p>Organize your photos into categories and collections.</p>
-            <button onClick={handleCollections}>Manage Now</button>
-          </div>
-        </div>
-      </section>
+        </section>
+      </main>
     </div>
   );
 };

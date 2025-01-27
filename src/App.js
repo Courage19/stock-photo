@@ -13,6 +13,16 @@ import ClientPage from './pages/ClientPage';
 import UploadPhotosPage from './pages/UploadPhotosPage';
 import ViewEarningsPage from './pages/ViewEarningsPage';
 import ManageCollectionsPage from './pages/ManageCollectionsPage';
+import BrowsePhotos from './pages/BrowsePhotos';
+import SubscriptionPage from './pages/SubscriptionPage';
+import DownloadsPage from './pages/DownloadsPage';
+import FavoritesPage from './pages/FavoritesPage';
+import ProfilePage from './pages/ProfilePage';
+import BillingPage from './pages/BillingPage';
+import ManageUsers from './pages/ManageUsers';
+import ReviewContent from './pages/ReviewContent';
+import ViewAnalytics from './pages/ViewAnalytics';
+import PlatformSettings from './pages/PlatformSettings';
 
 const App = () => {
   return (
@@ -30,6 +40,16 @@ const App = () => {
         <Route path="/upload-photos" element={<UploadPhotosPage />} />
         <Route path="/view-earnings" element={<ViewEarningsPage />} />
         <Route path="/manage-collections" element={<ManageCollectionsPage />} />
+        <Route path="/browse" element={<BrowsePhotos />} />
+        <Route path="/subscription" element={<SubscriptionPage />} />
+        <Route path="/downloads" element={<DownloadsPage />} />
+        <Route path="/favorites" element={<FavoritesPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/billing" element={<BillingPage />} />
+        <Route path="/manage-users" element={<ManageUsers />} />
+        <Route path="/review-content" element={<ReviewContent />} />
+        <Route path="/view-analytics" element={<ViewAnalytics />} />
+        <Route path="/platform-settings" element={<PlatformSettings />} />
       </Routes>
     </Router>
   );

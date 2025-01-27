@@ -9,7 +9,7 @@ const PricingPage = () => {
       <div className="pricing-cards">
         <div className="pricing-card">
           <h3>Basic</h3>
-          <p className="price">Free</p>
+          <p className="price">$9.99/month</p>
           <ul>
             <li><FaCheckCircle /> Access to 100 photos</li>
             <li><FaCheckCircle /> Standard License</li>
@@ -18,7 +18,7 @@ const PricingPage = () => {
         </div>
         <div className="pricing-card premium">
           <h3>Premium</h3>
-          <p className="price">$29/month</p>
+          <p className="price">$19/month</p>
           <ul>
             <li><FaCheckCircle /> Unlimited Downloads</li>
             <li><FaCheckCircle /> Premium License</li>

@@ -1,198 +1,201 @@
-/* Global Styles */
-body {
+/* General Reset */
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #343a40;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
   }
   
   .client-dashboard {
-    padding: 2rem;
-    max-width: 1200px;
-    margin: auto;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Fixed Drawer */
+  .fixed-drawer {
+    width: 250px;
+    background: #111;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+  
+  .drawer-logo h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+  }
+  
+  .drawer-logo h1 span {
+    color: #ffd700;
+  }
+  
+  .drawer-nav {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .drawer-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s ease;
+  }
+  
+  .drawer-nav a:hover {
+    color: #ffd700;
+    transform: translateX(10px);
+  }
+  
+  /* Main Content */
+  .client-main {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    padding: 20px;
+    overflow-y: auto;
   }
   
   /* Header Section */
   .client-header {
+    margin-bottom: 30px;
     text-align: center;
-    margin-bottom: 3rem;
+    background: #222;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   }
   
-  .client-header h1 {
-    font-size: 2.5rem;
-    color: #007bff;
+  .client-header h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
   }
   
   .client-header p {
-    font-size: 1.2rem;
-    color: #6c757d;
-    margin-top: 0.5rem;
+    font-size: 16px;
   }
   
   /* Quick Actions Section */
-  .quick-actions {
-    margin-bottom: 3rem;
-  }
-  
   .quick-actions h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #343a40;
+    font-size: 24px;
+    margin-bottom: 15px;
   }
   
   .action-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
   }
   
   .action-card {
-    background: white;
-    border: 1px solid #dee2e6;
-    border-radius: 10px;
+    flex: 1;
+    min-width: 300px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
-    padding: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     transition: transform 0.3s ease;
   }
   
   .action-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   }
   
   .action-icon {
-    font-size: 3rem;
-    color: #007bff;
-    margin-bottom: 1rem;
+    font-size: 40px;
+    color: #0d54c0;
+    margin-bottom: 10px;
   }
   
   .action-card h3 {
-    font-size: 1.5rem;
-    margin: 0.5rem 0;
-  }
-  
-  .action-card p {
-    font-size: 1rem;
-    color: #6c757d;
-    margin: 0.5rem 0 1rem;
+    font-size: 20px;
+    margin-bottom: 10px;
   }
   
   .action-card button {
-    background-color: #007bff;
-    color: white;
+    background: #0d54c0;
+    color: #222;
     border: none;
-    padding: 0.5rem 1.5rem;
-    border-radius: 5px;
-    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 14px;
+    transition: background 0.3s ease;
   }
   
   .action-card button:hover {
-    background-color: #0056b3;
+    background: #0d54c0;
   }
   
-  /* Favorites Section */
-  .favorites-section {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-  
-  .favorites-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  .favorites-section button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 0.75rem 2rem;
-    border-radius: 5px;
-    font-size: 1rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .favorites-section button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Account Section */
-  .account-section {
-    margin-bottom: 3rem;
-  }
-  
-  .account-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #343a40;
-  }
-  
-  .account-options {
+  /* Photographers Section */
+  .photographer-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
   }
   
-  .account-card {
-    background: white;
-    border: 1px solid #dee2e6;
-    border-radius: 10px;
+  .photographer-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
-    padding: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     transition: transform 0.3s ease;
   }
   
-  .account-card:hover {
-    transform: translateY(-5px);
+  .photographer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   }
   
-  .account-icon {
-    font-size: 3rem;
-    color: #007bff;
-    margin-bottom: 1rem;
+  .photographer-icon {
+    font-size: 40px;
+    color: #0d54c0;
+    margin-bottom: 10px;
   }
   
-  .account-card h3 {
-    font-size: 1.5rem;
-    margin: 0.5rem 0;
+  .photographer-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
   }
   
-  .account-card p {
-    font-size: 1rem;
-    color: #6c757d;
-    margin: 0.5rem 0 1rem;
+  .photographer-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
   }
   
-  .account-card button {
-    background-color: #007bff;
-    color: white;
+  .photographer-buttons button {
+    background: #0d54c0;
+    color: #222;
     border: none;
-    padding: 0.5rem 1.5rem;
-    border-radius: 5px;
-    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 14px;
+    transition: background 0.3s ease;
   }
   
-  .account-card button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .client-dashboard {
-      padding: 1rem;
-    }
-  
-    .action-cards,
-    .account-options {
-      grid-template-columns: 1fr;
-    }
+  .photographer-buttons button:hover {
+    background: #0d54c0;
   }
   
